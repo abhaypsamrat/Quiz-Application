@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200;300&family=Roboto+Slab&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.App {
+  min-height: 98.5vh;
+  border: 8px solid #39445a93;
+  /* margin: 5px; */
+  padding: 5px;
+}
