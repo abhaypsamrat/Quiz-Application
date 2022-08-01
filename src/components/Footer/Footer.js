@@ -7,9 +7,11 @@ const Footer = () => {
       <a
         href="https://apsamrat.netlify.app/"
         style={{ cursor: "pointer" }}
+        target='blank'
       >
         Samrat
       </a>
+     
     </div>
   );
 };
