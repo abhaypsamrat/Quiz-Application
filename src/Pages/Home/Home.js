@@ -2,22 +2,24 @@ import { Button, MenuItem, TextField } from "@mui/material";
 import "./Home.css";
 import Categories from "../../Data/Categories";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
-const Home = ({ name, setName }) => {
+const Home = ({ name, setName, fetchQuestions }) => {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [error, setError] = useState(false);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
-    if (!name || !category || !difficulty) {
+    if (!category || !difficulty || !name) {
       setError(true);
       return;
     } else {
       setError(false);
       fetchQuestions(category, difficulty);
-      history.push("/quiz");
+      navigate("/quiz");
     }
   };
 
@@ -70,7 +72,12 @@ const Home = ({ name, setName }) => {
             </MenuItem>
           </TextField>
 
-          <Button variant="contained" color="secondary" size="large">
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            onClick={handleSubmit}
+          >
             Start Quiz
           </Button>
         </div>
