@@ -10,7 +10,7 @@ import axios from "axios";
 
 function App() {
   const [name, setName] = useState("");
-  const [question, setQuestion] = useState();
+  const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0);
 
   const fetchQuestions = async (category = "", difficulty = "") => {
@@ -20,12 +20,12 @@ function App() {
       }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
     );
 
-    setQuestion(data.results);
+    setQuestions(data.results);
   };
 
   return (
     <BrowserRouter>
-      <div className="App" style={{ backgroundImage: "url(./bgimage.png)" }}>
+      <div className="app" >
         <Header />
         <Routes>
           <Route
@@ -45,14 +45,18 @@ function App() {
             element={
               <Quiz
                 name={name}
-                question={question}
+                questions={questions}
                 score={score}
                 setScore={setScore}
-                setQuestion={setQuestion}
+                setQuestions={setQuestions}
               />
             }
           ></Route>
-          <Route exact path="/result" element={<Results />}></Route>
+          <Route
+            exact
+            path="/result"
+            element={<Results name={name} score={score} />}
+          ></Route>
         </Routes>
       </div>
       <Footer />

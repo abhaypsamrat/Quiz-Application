@@ -1,18 +1,27 @@
 .title {
+  color: rgb(29, 128, 4);
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 3vw;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
+  align-items: center;
+  font-weight: 700;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .divider {
   margin: 10px;
   width: 100%;
-  background-color: grey;
+  background-color: rgb(120, 10, 103);
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 7.5vw;
+  }
 }

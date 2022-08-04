@@ -25,8 +25,8 @@ const Home = ({ name, setName, fetchQuestions }) => {
 
   return (
     <div className="content">
-      <div className="setting">
-        <span style={{ fontSize: 30 }}>Quiz setting</span>
+      <div className="settings">
+        <span style={{ fontSize: 30 }}>Let's Start</span>
 
         <div className="settings__select">
           {error && <ErrorMessage>Please fill all the fields</ErrorMessage>}
@@ -37,14 +37,13 @@ const Home = ({ name, setName, fetchQuestions }) => {
             variant="outlined"
             onChange={(e) => setName(e.target.value)}
           />
-
           <TextField
             select
             label="Select Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
             variant="outlined"
             style={{ marginBottom: 30 }}
-            onChange={(e) => setCategory(e.target.value)}
-            value={category}
           >
             {Categories.map((cat) => (
               <MenuItem key={cat.category} value={cat.value}>
