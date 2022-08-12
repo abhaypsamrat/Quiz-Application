@@ -10,11 +10,11 @@ https://quiz-application-live.netlify.app/
 
 ## Home Page Screenshots
 
-![](/public/image/ss1.png)
+![](/screenshot/ss1.png)
 
 ## Quiz Page Screenshots
 
-![](/public/image/ss2.png)
+![](/screenshot/ss2.png)
 
 ## Run Locally
 
