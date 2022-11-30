@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./Question.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
@@ -33,7 +33,7 @@ const Question = ({
 
   const handleNext = () => {
     if (currQues > 8) {
-      navigate.push("/result");
+      navigate("/result");
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected();

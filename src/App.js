@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./Pages/Home/Home";
 import Quiz from "./Pages/Quiz/Quiz";
-import Results from "./Pages/Result/Result";
+import Result from "./Pages/Result/Result";
 import { useState } from "react";
 import axios from "axios";
 
@@ -55,7 +55,7 @@ function App() {
           <Route
             exact
             path="/result"
-            element={<Results name={name} score={score} />}
+            element={<Result name={name} score={score} />}
           ></Route>
         </Routes>
       </div>
